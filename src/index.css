@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.carousel.slide.carousel-fade.carousel-indicators{
+    display: none;
+}
