@@ -36,19 +36,19 @@ const FavoriteMovie = () => {
 
   return (
     <>
-      <div className=" flex overflow-scroll">
+      <div className=" flex overflow-scroll ">
         {isLoading ? (
           <>
             <Loader />
           </>
         ) : (
           <div className="flex  gap-2 mt-2 ml-8">
+            
             {movies.map((item, index) => {
               return (
-                <div key={index}>
+                <div key={index} >
                   <Card
-                    style={{ width: "18rem", height: "30%" }}
-                    className="bg-black hover:transition-all hover:duration-500 hover:transform hover:scale-75 hover:z-50 hover:filter hover:ease-in duration-500"
+                    className="bg-black w-full md:w-[18rem] h-[10%] hover:transition-all hover:duration-500 hover:transform hover:scale-75 hover:z-50 hover:filter hover:ease-in duration-500"
                   >
                     <button onClick={() => MovieIdHandler(item.id)}>
                       <Card.Img variant="top" src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`} />

@@ -47,37 +47,44 @@ const CompleteMovieDetails = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <div className="bg-gray h-[100vh] overflow-hidden">
-          <Container fluid>
-            <Row>
-              <Col xs={6} className="m-0 p-0 rounded-lg hover:transition-all hover:duration-500 hover:transform hover:scale-105 hover:z-50 hover:filter shadow-lg">
-                <img src={`https://image.tmdb.org/t/p/original/${movies.backdrop_path}`} alt="Backdrop Image" className="brightness-[0.7] shadow-slate-200 h-[100vh] object-cover" />
-              </Col>
-              <Col xs={6} className=" shadow-slate-200 rounded-lg bg-gray m-0 p-0 brightness-110">
-                <div className="mt-3  flex justify-center h-[50vh]">
-                  <YouTube className=" " videoId={`${movieVideo}`} />
-                </div>
-                <div className="flex  justify-center ">
-                  <h3 className="text-goldencolor uppercase ps-10 pe-5">{movies.title}</h3>
-                </div>
-
-                <ReactStars value={movies.vote_average / 2} className="ps-10 " />
-                <div className="mb-1">
-                  <span className="bg-slate-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800  ms-10">{movies.runtime} Minute</span>
-                </div>
-                <div className="ps-10 pb-1 text-wt">
-                  <h5>
-                    {movies.status}-<span className="text-sm">{movies.release_date}</span>{" "}
-                  </h5>
-                  <h5>{movies.tagline}</h5>
-                </div>
-                <div className="flex  justify-center ps-10 pe-10">
-                  <h6 className="text-wt">{movies.overview}</h6>
-                </div>
-              </Col>
-            </Row>
-          </Container>
-        </div>
+        <div className="bg-gray-800 min-h-screen overflow-hidden">
+        <Container fluid>
+          <Row>
+            <Col xs={12} md={6} className="m-0 p-0 rounded-lg hover:transition-all hover:duration-500 hover:transform hover:scale-105 hover:z-50 hover:filter shadow-lg">
+              <img
+                src={`https://image.tmdb.org/t/p/original/${movies.backdrop_path}`}
+                alt="Backdrop Image"
+                className="brightness-[0.7] shadow-slate-200 h-[50vh] md:h-[100vh] object-cover w-full"
+              />
+            </Col>
+            <Col xs={12} md={6} className="shadow-slate-200 rounded-lg bg-gray-800 m-0 p-0 brightness-110">
+              <div className="mt-3  ml-0 md:ml-10 flex justify-center h-[30vh] md:h-[50vh]">
+                <YouTube className=" w-full h-full" videoId={`${movieVideo}`} />
+              </div>
+              <div className="flex  mt-40 justify-center md:mt-3">
+                <h3 className="text-[#ffd700] uppercase px-5">{movies.title}</h3>
+              </div>
+              <div className="flex justify-center mt-2">
+                <ReactStars value={movies.vote_average / 2} />
+              </div>
+              <div className="mb-1 flex justify-center mt-2">
+                <span className="bg-slate-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">
+                  {movies.runtime} Minute
+                </span>
+              </div>
+              <div className="px-5 pb-1 text-white mt-2">
+                <h5>
+                  {movies.status} - <span className="text-sm">{movies.release_date}</span>
+                </h5>
+                <h5>{movies.tagline}</h5>
+              </div>
+              <div className="flex justify-center px-5 mt-2">
+                <h6 className="text-white">{movies.overview}</h6>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </div>
       )}
     </>
   );
