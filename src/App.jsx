@@ -4,16 +4,16 @@ import HomePage from "./screens/HomePage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SearcheMovie from "./components/SearcheMovie";
 import CompleteMovieDetails from "./screens/CompleteMovieDetails";
-import NavBar from "./components/Navbar";
 import Footer from "./components/Footer";
 import FavoriteMovies from "./components/FavoriteMovies";
 import TrendingMovies from "./components/TrendingMovies";
 import RatedMovie from "./components/RatedMovie";
+import NavbarComponent from "./components/NavBarComponent";
 
 function App() {
   return (
     <>
-      <NavBar />
+      <NavbarComponent />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/movieSearch" element={<SearcheMovie />} />

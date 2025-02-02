@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link, useNavigate } from "react-router-dom";
 
-const NavBar = () => {
+const NavbarComponent = () => {
   const navigate = useNavigate();
   const SearchHandler = () => {
     navigate(`/movieSearch`);
@@ -42,4 +42,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default NavbarComponent;
